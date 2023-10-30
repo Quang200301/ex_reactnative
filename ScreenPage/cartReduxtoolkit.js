@@ -7,7 +7,7 @@ import { addItem, decrement,increment,removeItem } from '../Component/features.j
 const cart=({navigation})=>{
     const dispatch =useDispatch();
  
-    const addedItems = useSelector(state=>state);
+    const addedItems = useSelector((state)=>state.cart.cart);
     console.log('âddd=>',addedItems)
     const addToCart  = item=>{
         dispatch(addItem(item));
@@ -33,7 +33,9 @@ const cart=({navigation})=>{
                 <Text>Alo</Text>
                 <Text onPress={()=>navigation.navigate('cartproduct')}>
                     <AntDesign name="shoppingcart" size={24} color="black" />
-                    <Text>{addedItems.cart.length}</Text>
+                    {/* <Text>{addedItems.cart.cart.length}</Text> */}
+                    <Text>{addedItems.length}</Text>
+
                 </Text>
                 
                 </View>
